@@ -1,0 +1,46 @@
+services:
+  web_frontend:
+    dependencies:
+      - auth_service
+      - product_catalog
+      - shopping_cart
+
+  auth_service:
+    dependencies:
+      - user_database
+
+  product_catalog:
+    dependencies:
+      - product_database
+      - inventory_service
+
+  shopping_cart:
+    dependencies:
+      - product_catalog
+      - inventory_service
+      - payment_gateway
+
+  inventory_service:
+    dependencies:
+      - inventory_database
+
+  payment_gateway:
+    dependencies:
+      - external_payment_provider
+      - fraud_detection_service
+
+  user_database:
+    dependencies: []
+
+  product_database:
+    dependencies: []
+
+  inventory_database:
+    dependencies: []
+
+  fraud_detection_service:
+    dependencies:
+      - user_database
+
+  external_payment_provider:
+    dependencies: []

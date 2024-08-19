@@ -1,0 +1,6 @@
+PyYAML
+argparse
+GitPython
+Jinja2
+croniter
+logging

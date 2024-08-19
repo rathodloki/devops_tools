@@ -1,0 +1,5 @@
+networkx
+pyyaml
+flask
+prometheus_client
+requests
